@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/ZackPaul-dev/ArkhamLCGLibrary/issues"
   },
-  "homepage": "https://github.com/ZackPaul-dev/ArkhamLCGLibrary#readme"
+  "homepage": "https://github.com/ZackPaul-dev/ArkhamLCGLibrary#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
 }
