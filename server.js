@@ -6,7 +6,7 @@ const cors = require('cors');
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.sendFile(_dirName + '/index.html')
+    res.sendFile(__dirname + '/index.html')
 })
 
 app.listen(PORT, () => {
