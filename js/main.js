@@ -1,0 +1,1 @@
+fetch("https://arkhamdb.com/api/public/01001.json")
