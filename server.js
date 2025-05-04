@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require ('express');
 const app = express();
 const PORT = 8000;
@@ -7,6 +8,11 @@ app.use(cors());
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
+})
+
+app.get("/js/main.js", function(req, res){
+    res.setHeader('Content-Type', 'text/javascript');
+    res.sendFile(path.join(__dirname, 'js', 'main.js'))
 })
 
 app.listen(PORT, () => {
