@@ -15,6 +15,11 @@ app.get("/js/main.js", function(req, res){
     res.sendFile(path.join(__dirname, 'js', 'main.js'))
 })
 
+app.get('/css/style.css', function(req, res){
+    res.setHeader('Content-Type', 'text/css');
+    res.sendFile(path.join(__dirname, 'css', 'style.css'))
+})
+
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`)
 })
