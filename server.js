@@ -4,15 +4,21 @@ const app = express();
 const PORT = 8000;
 const cors = require('cors');
 
-
 app.use(cors());
+
+app.use((req,res,next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET')
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+})
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 })
 
 app.get("/js/main.js", function(req, res){
-    res.setHeader('Content-Type', 'text/javascript', Access-Control-Allow-Origin: "https://arkhamdb.com/");
+    res.setHeader('Content-Type', 'text/javascript');
     res.sendFile(path.join(__dirname, 'js', 'main.js'))
 })
 
