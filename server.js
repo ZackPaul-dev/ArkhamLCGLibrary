@@ -4,6 +4,7 @@ const app = express();
 const PORT = 8000;
 const cors = require('cors');
 
+
 app.use(cors());
 
 app.get('/', (req, res) => {
@@ -11,7 +12,7 @@ app.get('/', (req, res) => {
 })
 
 app.get("/js/main.js", function(req, res){
-    res.setHeader('Content-Type', 'text/javascript');
+    res.setHeader('Content-Type', 'text/javascript', Access-Control-Allow-Origin: "https://arkhamdb.com/");
     res.sendFile(path.join(__dirname, 'js', 'main.js'))
 })
 
