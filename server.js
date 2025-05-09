@@ -32,8 +32,9 @@ app.get('/css/normalize.css', function(req, res){
     res.sendFile(path.join(__dirname, 'css', 'normalize.css'))
 })
 
-let data = fetch("https://arkhamdb.com/api/public/01001.json");
-console.log(data)
+fetch("https://arkhamdb.com/api/public/card/01001.json")
+.then(res => res.json())
+.then(json => console.log(json))
 
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`)
