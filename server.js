@@ -34,7 +34,12 @@ app.get('/css/normalize.css', function(req, res){
 
 fetch("https://arkhamdb.com/api/public/card/01001.json")
 .then(res => res.json())
-.then(json => console.log(json))
+.then(data => {
+    console.log(data)
+})
+.catch(err =>{
+    console.log(`error${err}`)
+})
 
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`)
