@@ -1,6 +1,6 @@
 alert('working');
 
-document.querySelector('submit').addEventListener('click', findGator)
+document.querySelector('button').addEventListener('click', findGator)
 
 async function findGator(){
     const gatorName = document.querySelector('input').value
