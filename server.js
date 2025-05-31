@@ -32,7 +32,7 @@ app.get('/css/normalize.css', function(req, res){
     res.sendFile(path.join(__dirname, 'css', 'normalize.css'))
 })
 
-app.get('/:cName', (req, res) =>{
+/*app.get('/:cName', (req, res) =>{
 fetch("https://arkhamdb.com/api/public/card/01001.json")
 .then(res => res.json())
 .then(data => {
@@ -41,7 +41,7 @@ fetch("https://arkhamdb.com/api/public/card/01001.json")
 .catch(err =>{
     console.log(`error${err}`)
 })
-})
+})*/
 
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`)
