@@ -14,7 +14,15 @@ app.use((req,res,next) => {
 })
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
+    res.sendFile(__dirname + '/index.html');
+fetch(`https://arkhamdb.com/api/public/cards?_format=json`)
+.then(res => res.json())
+.then(data => {
+    console.log(data)
+})
+.catch(err =>{
+    console.log(`error${err}`)
+})
 })
 
 app.get("/js/main.js", function(req, res){
@@ -32,16 +40,9 @@ app.get('/css/normalize.css', function(req, res){
     res.sendFile(path.join(__dirname, 'css', 'normalize.css'))
 })
 
-app.get(':/cName', (req, res) =>{
-fetch(`https://arkhamdb.com/api/public/cards?_format=json`)
-.then(res => res.json())
-.then(data => {
-    console.log(data)
-})
-.catch(err =>{
-    console.log(`error${err}`)
-})
-})
+/*app.get(':/cName', (req, res) =>{
+
+})*/
 
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`)
