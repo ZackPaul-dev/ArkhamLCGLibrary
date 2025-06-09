@@ -23,7 +23,6 @@ fetch(`https://arkhamdb.com/api/public/cards?_format=json`)
 .catch(err =>{
     console.log(`error${err}`)
 })
-alert('yaaaay!');
 })
 
 app.get("/js/main.js", function(req, res){
