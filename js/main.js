@@ -2,9 +2,9 @@ alert('working');
 
 document.querySelector('button').addEventListener('click', findGator)
 
-fetch('/server.js/collection')
-.then(response => response.json)
-.then(console.log(collection))
+let collection = await fetch('/server.js/cards')
+
+console.log(collection)
 
 async function findGator(){
     const gatorName = document.querySelector('input').value
