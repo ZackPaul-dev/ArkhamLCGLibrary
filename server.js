@@ -40,6 +40,7 @@ fetch(`https://arkhamdb.com/api/public/cards?_format=json`)
 })*/
 .then(data => {
    let collection = data;
+   res.send(collection);
 })
 .catch(err =>{
     console.log(`error${err}`)
