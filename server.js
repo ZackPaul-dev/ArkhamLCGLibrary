@@ -15,6 +15,19 @@ app.use((req,res,next) => {
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
+
+fetch(`https://arkhamdb.com/api/public/cards?_format=json`)
+.then(res => res.json())
+/*.then(data => {
+    console.log(data)
+})*/
+.then(data => {
+   let collection = data;
+   res.send(collection);
+})
+.catch(err =>{
+    console.log(`error${err}`)
+})
 })
 
 app.get("/js/main.js", function(req, res){
@@ -33,18 +46,6 @@ app.get('/css/normalize.css', function(req, res){
 })
 
 app.get('/cards', (req, res) =>{
-fetch(`https://arkhamdb.com/api/public/cards?_format=json`)
-.then(res => res.json())
-/*.then(data => {
-    console.log(data)
-})*/
-.then(data => {
-   let collection = data;
-   res.send(collection);
-})
-.catch(err =>{
-    console.log(`error${err}`)
-})
 })
 
 app.listen(PORT, () => {
