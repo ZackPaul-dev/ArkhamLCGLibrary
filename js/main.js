@@ -3,7 +3,7 @@ alert('working');
 document.querySelector('button').addEventListener('click', findGator)
 
 async function getCards(){
-let collection = await fetch(`/collection`)
+let collection = await fetch(`/data?=collection`)
 
 console.log(collection)
 };

@@ -33,7 +33,7 @@ app.get('/css/normalize.css', function(req, res){
 })
 
 fetch(`https://arkhamdb.com/api/public/cards?_format=json`)
-.then(res => res.json())
+//.then(res => res.json())
 /*.then(data => {
     console.log(data)
 })*/
