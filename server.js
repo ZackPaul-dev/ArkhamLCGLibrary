@@ -32,19 +32,22 @@ app.get('/css/normalize.css', function(req, res){
     res.sendFile(path.join(__dirname, 'css', 'normalize.css'))
 })
 
-fetch(`https://arkhamdb.com/api/public/cards?_format=json`)
-//.then(res => res.json())
+app.get("/cards", function(req, res) {
+    fetch(`https://arkhamdb.com/api/public/cards?_format=json`)
+    .then(res => res.json())
 /*.then(data => {
     console.log(data)
 })*/
 .then(data => {
-   let collection = data;
-   console.log(collection);
-   res.send(collection);
+   //let collection = data;
+   //console.log(collection);
+   res.send(data);
 })
 .catch(err =>{
     console.log(`${err}`)
 })
+})
+
 
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`)
