@@ -17,9 +17,9 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
     fetch(`https://arkhamdb.com/api/public/cards?_format=json`)
 .then(res => res.json())
-.then(data => {
+/*.then(data => {
     console.log(data)
-})
+})*/
 .then(data => {
    let collection = data;
    res.send(collection);
