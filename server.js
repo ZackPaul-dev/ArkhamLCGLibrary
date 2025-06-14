@@ -22,7 +22,8 @@ app.get('/', (req, res) => {
 })*/
 .then(data => {
    let collection = data;
-   res.send(collection);
+   //res.send(collection);
+   console.log(collection);
 })
 .catch(err =>{
     console.log(`error${err}`)
