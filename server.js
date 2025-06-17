@@ -32,7 +32,7 @@ app.get('/css/normalize.css', function(req, res){
     res.sendFile(path.join(__dirname, 'css', 'normalize.css'))
 })
 
-app.get("/cards", function(req, res) {
+app.get('/cards', function(req, res) {
     fetch(`https://arkhamdb.com/api/public/cards?_format=json`)
     .then(res => res.json())
 /*.then(data => {
