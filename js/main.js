@@ -1,6 +1,8 @@
 
 alert('working');
 
+let collection = undefined;
+
 document.querySelector('button').addEventListener('click', findGator)
 
 async function getCards(req, res){
@@ -9,7 +11,7 @@ async function getCards(req, res){
         .then(res => res.json())
         //.then(data => console.log(data))
         .then(data => {
-   let collection = data;
+   collection = data;
    console.log(collection)
 });
 }
