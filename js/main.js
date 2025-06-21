@@ -22,3 +22,4 @@ async function findGator(){
    
         document.querySelector('h2').innerText = collection.real_name
     } 
+do stuff
