@@ -24,7 +24,9 @@ console.log(collection.find((obj) => obj.real_name == "Knife"));
 
 async function findGator(){
     await(getCards);
-    const gatorName = document.querySelector('input').values
+    const gatorName = document.querySelector('input').value
+    let cardDesc = collection.find((obj) => obj.real_name == `${gatorName}`);
    
-        document.querySelector('h2').innerText = collection.find((obj) => obj.real_name == `${gatorName}`);
+        document.querySelector('h2').innerText = cardDesc.real_text;
+        console.log(collection.find((obj) => obj.real_name == `${gatorName}`));
     } 
