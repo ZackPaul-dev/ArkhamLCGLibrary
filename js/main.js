@@ -17,9 +17,13 @@ async function getCards(req, res){
 }
 getCards();
 
+async function testSearch(){
+    await(getCards);
 console.log(collection.find((obj) => obj.real_name == "Knife"));
+}
 
 async function findGator(){
+    await(getCards);
     const gatorName = document.querySelector('input').values
    
         document.querySelector('h2').innerText = collection.find((obj) => obj.real_name == `${gatorName}`);
