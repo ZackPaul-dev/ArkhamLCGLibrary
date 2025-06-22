@@ -20,5 +20,5 @@ getCards();
 async function findGator(){
     const gatorName = document.querySelector('input').values
    
-        document.querySelector('h2').innerText = collection
+        document.querySelector('h2').innerText = collection.real_name == `${gatorName}`;
     } 
