@@ -29,6 +29,6 @@ async function findGator(){
    
     document.querySelector('h3').innerText = cardDesc.real_name;
     document.querySelector('h4').innerText = cardDesc.real_slot;    
-    document.querySelector('h4').innerText = cardDesc.real_text;
+    document.querySelector('h5').innerText = cardDesc.real_text;
         console.log(collection.find((obj) => obj.real_name == `${gatorName}`));
     } 
