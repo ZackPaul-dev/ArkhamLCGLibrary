@@ -14,15 +14,15 @@ async function getCards(req, res){
 }
 getCards();
 
-async function testSearch(){
+/*async function testSearch(){
     await(getCards);
 console.log(collection.find((obj) => obj.real_name == "Knife"));
-}
+}*/
 
 async function findGator(){
     await(getCards);
-    const gatorName = document.querySelector('input').value
-    let cardDesc = collection.find((obj) => obj.real_name == `${gatorName}`);
+    const gatorName = document.querySelector('input').value.toLowerCase();
+    let cardDesc = collection.find((obj) => obj.real_name.toLowerCase() == `${gatorName}`);
    
     document.querySelector('h3').innerText = cardDesc.real_name;
     document.querySelector('img').src = 'https://arkhamDB.com' + cardDesc.imagesrc;
