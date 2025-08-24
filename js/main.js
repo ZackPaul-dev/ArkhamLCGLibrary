@@ -1,6 +1,6 @@
 let collection = undefined;
 
-document.querySelector('button').addEventListener('click', findGator)
+document.querySelector('.search').addEventListener('click', findGator)
 
 function getCards(req, res){
 
