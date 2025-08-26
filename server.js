@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require ('express');
+const ejs = require('ejs');
 const app = express();
 const PORT = 8000;
 const cors = require('cors');
@@ -14,7 +15,7 @@ app.use((req,res,next) => {
 })
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.render(__dirname + '/views/index.ejs');
 })
 
 app.get("/js/main.js", function(req, res){
