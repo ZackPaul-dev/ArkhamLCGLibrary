@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
     res.render(__dirname + '/views/index.ejs');
 })
 
-app.get("/js/main.js", function(req, res){
+app.get('/public/js/main.js', function(req, res){
     res.setHeader('Content-Type', 'text/javascript');
     res.sendFile(path.join(__dirname, 'js', 'main.js'))
 })
