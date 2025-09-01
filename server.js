@@ -20,17 +20,17 @@ app.get('/', (req, res) => {
 
 app.get('/public/js/main.js', function(req, res){
     res.setHeader('Content-Type', 'text/javascript');
-    res.sendFile(path.join(__dirname, 'js', 'main.js'))
+    res.sendFile(path.join(__dirname, 'public', 'js', 'main.js'))
 })
 
 app.get('/public/css/style.css', function(req, res){
     res.setHeader('Content-Type', 'text/css');
-    res.sendFile(path.join(__dirname, 'css', 'style.css'))
+    res.sendFile(path.join(__dirname, 'public', 'css', 'style.css'))
 })
 
 app.get('/public/css/normalize.css', function(req, res){
     res.setHeader('Content-Type', 'text/css');
-    res.sendFile(path.join(__dirname, 'css', 'normalize.css'))
+    res.sendFile(path.join(__dirname, 'public', 'css', 'normalize.css'))
 })
 
 app.get('/cards', function(req, res) {
