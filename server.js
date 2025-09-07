@@ -1,12 +1,15 @@
 const path = require('path');
 const express = require ('express');
-const router = express.Router()
 const ejs = require('ejs');
 const app = express();
 const PORT = 8000;
 const cors = require('cors');
 
+const homeRoutes = require ('.routes/home');
+const searchRoutes = require ('.routes/search')
+
 app.use(cors());
+app.set('view engine', 'ejs');
 
 app.use((req,res,next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -15,11 +18,11 @@ app.use((req,res,next) => {
     next();
 })
 
-router.get('/', (req, res) => {
+app.get('/', (req, res) => {
     res.render(__dirname + '/views/index.ejs');
 })
 
-router.get('/search', (req, res) => {
+app.get('/search', (req, res) => {
     res.render(__dirname + '/views/search.html');
 })
 
