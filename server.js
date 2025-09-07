@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require ('express');
+const router = express.Router()
 const ejs = require('ejs');
 const app = express();
 const PORT = 8000;
@@ -14,8 +15,12 @@ app.use((req,res,next) => {
     next();
 })
 
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
     res.render(__dirname + '/views/index.ejs');
+})
+
+router.get('/search', (req, res) => {
+    res.render(__dirname + '/views/search.html');
 })
 
 app.get('/public/js/main.js', function(req, res){
