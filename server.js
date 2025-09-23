@@ -9,6 +9,8 @@ const homeRoutes = require ('./routes/home');
 const searchRoutes = require ('./routes/search')
 
 app.use(cors());
+app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true}))
 app.set('view engine', 'ejs');
 
 app.use((req,res,next) => {
@@ -18,13 +20,16 @@ app.use((req,res,next) => {
     next();
 })
 
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
     res.render(__dirname + '/views/index.ejs');
-})
+})*/
 
-app.get('/search', (req, res) => {
+app.use('/', homeRoutes)
+app.use('/search', searchRoutes)
+
+/*app.get('/search', (req, res) => {
     res.render(__dirname + '/views/search.html');
-})
+})*/
 
 app.get('/public/js/main.js', function(req, res){
     res.setHeader('Content-Type', 'text/javascript');
