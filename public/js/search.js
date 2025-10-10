@@ -12,7 +12,7 @@ function getCards(req, res){
    console.log(collection)
 });
 }
-getCards();
+//getCards();
 
 /*async function testSearch(){
     await(getCards);
