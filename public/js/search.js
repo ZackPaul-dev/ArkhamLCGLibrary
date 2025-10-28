@@ -1,4 +1,4 @@
-/*let collection = undefined;
+let collection = undefined;
 
 document.querySelector('.search').addEventListener('click', findGator)
 
@@ -12,9 +12,9 @@ function getCards(req, res){
    console.log(collection)
 });
 }
-//getCards();
+getCards();
 
-/*async function testSearch(){
+async function testSearch(){
     await(getCards);
 console.log(collection.find((obj) => obj.real_name == "Knife"));
 }
@@ -29,4 +29,4 @@ async function findGator(){
     document.querySelector('h4').innerText = cardDesc.type_name;    
     document.querySelector('h5').innerText = cardDesc.real_traits;
     document.querySelector('h6').innerText = cardDesc.real_text;
-    } */
+    } 
